@@ -6,16 +6,23 @@ This document is a place to write down and share different [wireit](https://gith
 
 ```JSON
 {
-  "command": "tsc --build --pretty",
-  "clean": "if-file-deleted",
-  "files": [
-    "src/**/*.{ts,tsx}",
-    "tsconfig.json"
-  ],
-  "output": [
-    "target/**",
-    "tsconfig.tsbuildinfo"
-  ]
+  "script": {
+    "tsc": "wireit"
+  },
+  "wireit": {
+    "tsc": {
+      "command": "tsc --build --pretty",
+      "clean": "if-file-deleted",
+      "files": [
+        "src/**",
+        "tsconfig.json"
+      ],
+      "output": [
+        "target/**",
+        "tsconfig.tsbuildinfo"
+      ]
+    }
+  }
 }
 ```
 
@@ -27,13 +34,20 @@ If an output isn't defined, but files is, we will cache things we don't intend i
 
 ```JSON
 {
-  "command": "jest --json --outputFile jestresults.json",
-  "files": [
-    "src/**"
-  ],
-  "output": [
-    "jestresults.json"
-  ]
+  "script": {
+    "test": "wireit"
+  },
+  "wireit": {
+    "test": {
+      "command": "jest --json --outputFile jestresults.json",
+      "files": [
+        "src/**"
+      ],
+      "output": [
+        "jestresults.json"
+      ]
+    }
+  }
 }
 ```
 
@@ -47,13 +61,17 @@ npm i copyfiles
 
 ```JSON
 {
-  "command": "copyfiles -u 1 \"src/**/*.css\" target",
-  "clean": "if-file-deleted",
-  "files": [
-    "src/**/*.css"
-  ],
-  "output": [
-    "target/**/*.css"
-  ]
+  "wireit": {
+    "cp:css": {
+      "command": "copyfiles -u 1 \"src/**/*.css\" target",
+      "clean": "if-file-deleted",
+      "files": [
+        "src/**/*.css"
+      ],
+      "output": [
+        "target/**/*.css"
+      ]
+    }
+  }
 }
 ```
