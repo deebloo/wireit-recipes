@@ -1,5 +1,7 @@
 # Wireit Recipes
 
+This document is a place to write down and share different [wireit](https://github.com/google/wireit) configurations
+
 ## TypeScript
 
 ```JSON
