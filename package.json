@@ -1,0 +1,18 @@
+{
+  "name": "wireit-recipes",
+  "version": "1.0.0",
+  "description": "This document is a place to write down and share different [wireit](https://github.com/google/wireit) configurations",
+  "main": "index.js",
+  "workspaces": [
+    "examples/**"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "wireit": "^0.14.3"
+  }
+}
