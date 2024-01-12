@@ -14,7 +14,7 @@ This document is a place to write down and share different [wireit](https://gith
       "command": "tsc --build --pretty",
       "clean": "if-file-deleted",
       "files": [
-        "src/**",
+        "src/**/*.{ts,tsx}",
         "tsconfig.json"
       ],
       "output": [
