@@ -1,0 +1,32 @@
+{
+  "name": "@wr/tsc",
+  "version": "1.0.0",
+  "description": "This document is a place to write down and share different [wireit](https://github.com/google/wireit) configurations",
+  "files": [
+    "target",
+    "src"
+  ],
+  "scripts": {
+    "tsc": "wireit"
+  },
+  "wireit": {
+    "tsc": {
+      "command": "tsc --build --pretty",
+      "clean": "if-file-deleted",
+      "files": [
+        "src/**/*.{ts,tsx}",
+        "tsconfig.json"
+      ],
+      "output": [
+        "target/**",
+        "tsconfig.tsbuildinfo"
+      ]
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
